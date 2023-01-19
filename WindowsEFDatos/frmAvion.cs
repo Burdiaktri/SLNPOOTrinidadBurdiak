@@ -40,5 +40,35 @@ namespace WindowsEFDatos
                 MostrarAviones();
             }
         }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            Avion avion = new Avion() {IdAvion= Convert.ToInt32(txtId.Text), Capacidad = Convert.ToInt32(txtCapacidad.Text), Denominacion = txtDenominacion.Text };
+            int filasAfectadas = AbmAvion.Update(avion);
+            if (filasAfectadas > 0)
+            {
+                MessageBox.Show("Update ok");
+                MostrarAviones();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Avion avion = new Avion() { IdAvion = Convert.ToInt32(txtId.Text), Capacidad = Convert.ToInt32(txtCapacidad.Text), Denominacion = txtDenominacion.Text };
+            int filasAfectadas = AbmAvion.Delete(avion);
+            if (filasAfectadas > 0)
+            {
+                MessageBox.Show("Delete ok");
+                MostrarAviones();
+            }
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+            Avion avion = AbmAvion.SelectById(id);
+            MessageBox.Show(Convert.ToString(avion.Capacidad) + " " + avion.Denominacion);
+        }
     }
 }

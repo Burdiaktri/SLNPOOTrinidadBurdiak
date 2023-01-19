@@ -26,8 +26,7 @@ namespace WindowsEFDatos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\BURDIAK-TRI\\SQLEXPRESS;Initial Catalog=DBLineaAerea;Integrated Secu" +
-            "rity=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;Initial Catalog=DBLineaAerea;Integrated Security=True")]
         public string KeyDB {
             get {
                 return ((string)(this["KeyDB"]));
